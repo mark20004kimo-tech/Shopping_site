@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+		"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<package name="default" extends="struts-default">
+        <!--member權限-->
+        <!--會員登入-->
+		<action name="login" class="controller.loginAction" method="execute">
+			<result name="loginok" type="redirect">/loginok.jsp</result>
+			<result name="addmember" type="redirect">/loginerror.jsp</result>
+		</action>
+		
+		<!--會員註冊-->
+		<action name="checkUser" class="controller.checkUserAction" method="execute">
+			<result name="userduplicate" type="redirect">/userduplicate.jsp</result>
+			<result name="addmemberok" type="redirect">/addmemberok.jsp</result>
+		</action>
+		
+		<!--購物訂單~1-->
+		<action name="confirm" class="controller.confirm" method="execute">
+			<result name="confirm" type="redirect">confirm.jsp</result>
+		</action>
+		
+		<!--購物訂單~2-->
+		<action name="add" class="controller.addporderAction" method="execute">
+			<result name="finish" type="redirect">finish.jsp</result>
+		</action>
+		
+		<!--訂單查詢-->
+		<action name="findporder" class="controller.findporderAction" method="execute">
+			<result name="success" type="redirect">findporderresult.jsp</result>
+			<result name="error" type="redirect">findporderresulterror.jsp</result>
+		</action>
+		
+		<!--訂單刪除-->
+		<action name="deleteporder" class="controller.deleteporderAction" method="execute">
+			<result name="ok" type="redirect">deleteporderok.jsp</result>
+			<result name="error" type="redirect">deletepordererror.jsp</result>
+		</action>
+		
+		<!--訂單修改~1-->
+		<action name="porderupdate" class="controller.updateconfirm" method="execute">
+			<result name="updateconfirm" type="redirect">updateconfirm.jsp</result>
+			<result name="error" type="redirect">updateconfirmerror.jsp</result>
+		</action>
+		
+		<!--訂單修改~1-->
+		<action name="update" class="controller.updateporderAction" method="execute">
+			<result name="finish" type="redirect">finish.jsp</result>
+		</action>
+		
+		<!--會員資料更新-->
+		<action name="updateuser" class="controller.updateuserAction" method="execute">
+			<result name="ok" type="redirect">/memberupdateok.jsp</result>		
+		</action>
+		
+		
+		
+		
+		
+		
+		<!--manager權限-->
+		<!--管理員登入-->
+		<action name="mrlogin" class="mrcontroller.mrloginAction" method="execute">
+			<result name="loginok" type="redirect">/mr/mrloginok.jsp</result>
+			<result name="addmember" type="redirect">/mr/mrloginerror.jsp</result>
+		</action>
+		
+		<!--新增管理員-->
+		<action name="mraddmanager" class="mrcontroller.mrcheckmanagerAction" method="execute">
+			<result name="userduplicate" type="redirect">/mr/mrmanagerduplicate.jsp</result>
+			<result name="addmanagerok" type="redirect">/mr/mraddmanagerok.jsp</result>
+		</action>
+		
+		<!--會員資料刪除-->
+		<action name="mrmemberdelete" class="mrcontroller.mrdeletememberAction" method="execute">
+			<result name="ok" type="redirect">/mr/mrdeletememberok.jsp</result>
+			<result name="error" type="redirect">/mr/mrdeletemembererror.jsp</result>
+		</action>
+		
+		<!--管理員資料刪除-->
+		<action name="mrmanagerdelete" class="mrcontroller.mrdeletemanagerAction" method="execute">
+			<result name="ok" type="redirect">/mr/mrdeletemanagerok.jsp</result>
+			<result name="error" type="redirect">/mr/mrdeletemanagererror.jsp</result>
+		</action>
+		
+		<!--訂單刪除-->	
+		<action name="mrporderdelete" class="mrcontroller.mrdeleteporderAction" method="execute">
+			<result name="ok" type="redirect">/mr/mrdeleteporderok.jsp</result>
+			<result name="error" type="redirect">/mr/mrdeletepordererror.jsp</result>
+		</action>
+		
+		<!--管理員資料修改-->
+		<action name="mrmanagerupdate" class="mrcontroller.mrupdatemanagerAction" method="execute">
+			<result name="ok" type="redirect">/mr/mrmanagerupdateok.jsp</result>
+		</action>
+		
+		<!--訂單修改~1-->
+		<action name="mrporderupdate" class="mrcontroller.mrupdateconfirmAction" method="execute">
+			<result name="updateconfirm" type="redirect">/mr/mrupdateconfirm.jsp</result>
+		    <result name="error" type="redirect">/mr/mrupdateconfirmerror.jsp</result>
+		</action>
+		
+		<!--訂單修改check~2-->
+		<action name="mrupdate" class="mrcontroller.mrupdateporderAction" method="execute">
+			<result name="finish" type="redirect">/mr/mrfinish.jsp</result>
+		</action>
+		
+		<!--會員資料修改-->
+		<action name="mrmemberupdate" class="mrcontroller.mrupdateuserAction" method="execute">
+			<result name="ok" type="redirect">/mr/mrmemberupdateok.jsp</result>
+			<result name="error" type="redirect">/mr/mrmemberupdateerror.jsp</result>			
+		</action>
+		
+		<!--會員資料查詢-->
+		<action name="mrfindmember" class="mrcontroller.mrfindmemberAction" method="execute">
+			<result name="ok" type="redirect">/mr/mrfindmemberresult.jsp</result>
+		</action>
+		
+		<!--訂單查詢-->
+		<action name="mrfindporder" class="mrcontroller.mrfindporderAction" method="execute">
+			<result name="ok" type="redirect">/mr/mrfindporderresult.jsp</result>
+		</action>
+		
+		<!--管理員資料查詢-->		
+		<action name="mrfindmanager" class="mrcontroller.mrfindmanagerAction" method="execute">
+			<result name="ok" type="redirect">/mr/mrfindmanagerresult.jsp</result>
+		</action>
+		
+		
+		
+	</package>
+</struts>

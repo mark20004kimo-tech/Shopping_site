@@ -1,0 +1,7 @@
+/controller/
+/dao/
+/fact/
+/hibernate.cfg.xml
+/model/
+/mrcontroller/
+/struts.xml
