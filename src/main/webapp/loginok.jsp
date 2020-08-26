@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=BIG5"
 	pageEncoding="utf-8"
-	import="model.member"%>
+	import="model.Member"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -96,7 +96,7 @@ body {
 	<div id="main">
 		<marquee style="font-weight: bold; font-size: 40px; color: red"
 			direction="right" Width="1000" height="45" scrollamount="10">
-			Welcome!<% member m=(member)session.getAttribute("M");%>
+			Welcome!<% Member m=(Member)session.getAttribute("M");%>
             <%=m.getName()%>~
                         會員ID:<%=m.getId()%></marquee>
 		<br>

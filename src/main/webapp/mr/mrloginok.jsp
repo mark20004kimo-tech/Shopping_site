@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"
-    import="model.manager"%>
+    import="model.Manager"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -98,7 +98,7 @@ body {
     <div id="main">
 		<marquee style="font-weight: bold; font-size: 40px; color: red"
 			direction="right" Width="1000" height="45" scrollamount="10">
-			Welcome!<% manager mr=(manager)session.getAttribute("Mr");%>
+			Welcome!<% Manager mr=(Manager)session.getAttribute("Mr");%>
             <%=mr.getName()%>~
                         管理員ID:<%=mr.getId()%></marquee>
 		<br>

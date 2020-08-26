@@ -5,7 +5,7 @@
 <%@ page isELIgnored="false"%> <!--支援EL表示式，不設的話，EL表示式不會解析-->
 <%@ page language="java" contentType="text/html; charset=BIG5"
     pageEncoding="BIG5"
-    import="model.member"
+    import="model.Member"
     import="java.util.List"%>
 <!DOCTYPE html>
 <html>
@@ -28,7 +28,7 @@
 </head>
 <body>
       <%
-      List<member> m = (List<member>)session.getAttribute("ll");
+      List<Member> m = (List<Member>)session.getAttribute("ll");
       System.out.println(m);
       
 	%>

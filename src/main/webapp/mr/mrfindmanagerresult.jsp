@@ -5,7 +5,7 @@
 <%@ page isELIgnored="false"%> <!--支援EL表示式，不設的話，EL表示式不會解析-->
 <%@ page language="java" contentType="text/html; charset=BIG5"
     pageEncoding="BIG5"
-    import="model.manager"
+    import="model.Manager"
     import="java.util.List"%>
 <!DOCTYPE html>
 <html>
@@ -28,7 +28,7 @@
 </head>
 <body>
       <%
-      List<manager> mr2 = (List<manager>) session.getAttribute("Mr2");
+      List<Manager> mr2 = (List<Manager>) session.getAttribute("Mr2");
 	%>
 	<h1 align="center">管理員列表</h1>
     <span style="font-weight:bold ;border: 5px outset pink; background-color:pink ;

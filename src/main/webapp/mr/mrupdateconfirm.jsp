@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=BIG5"
-	pageEncoding="BIG5" import="model.porder"%>
+	pageEncoding="BIG5" import="model.Porder"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +30,7 @@ h1 {
 <body>
 <h1 align="center">­q³æ­×§ï½T»{</h1>
 	<%
-		porder p = (porder) session.getAttribute("P1");
+		Porder p = (Porder) session.getAttribute("P1");
 	%><br>
 	<table width=500 align=center>
 		<tr>

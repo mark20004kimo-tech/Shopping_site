@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=BIG5"
     pageEncoding="BIG5"
-    import="model.manager"%>
+    import="model.Manager"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,7 +43,7 @@
 </head>
 <body style="background:url(../pic/coffee4.jpg) no-repeat">
 <h1 align="center">管理員資料修改</h1>
-<div class="header"><% manager mr=(manager)session.getAttribute("Mr");%>
+<div class="header"><% Manager mr=(Manager)session.getAttribute("Mr");%>
                     <%=mr.getName()%>~
                             會員ID:<%=mr.getId()%></div>
 	<div class="sideBar"></div>

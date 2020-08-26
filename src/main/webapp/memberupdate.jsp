@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=BIG5"
     pageEncoding="BIG5"
-    import="model.member"%>
+    import="model.Member"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +40,7 @@
 <body style="background:url(pic/coffee4.jpg) no-repeat">
 
 
-<div class="header"><% member m=(member)session.getAttribute("M");%>
+<div class="header"><% Member m=(Member)session.getAttribute("M");%>
                     <%=m.getName()%>~
                             ·|­ûID:<%=m.getId()%></div>
 	<div class="sideBar"></div>

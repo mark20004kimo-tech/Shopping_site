@@ -5,7 +5,7 @@
 <%@ page isELIgnored="false"%> <!--支援EL表示式，不設的話，EL表示式不會解析-->
 <%@ page language="java" contentType="text/html; charset=BIG5"
     pageEncoding="BIG5"
-    import="model.porder"
+    import="model.Porder"
     import="java.util.List"%>
 <!DOCTYPE html>
 <html>
@@ -28,7 +28,7 @@
 </head>
 <body>
       <%
-      List<porder> p2  = (List<porder>) session.getAttribute("P2");
+      List<Porder> p2  = (List<Porder>) session.getAttribute("P2");
       System.out.println(p2);
 	%>
 	<h1 align="center">訂單列表</h1>
