@@ -1,0 +1,8 @@
+body{
+         margin:0px;
+         padding:0px;
+         background:#fff url(../pic/coffee3.jpg) center center fixed no-repeat;　//設定背景圖片的呈現方式
+         background-size: cover;　
+}
+     
+

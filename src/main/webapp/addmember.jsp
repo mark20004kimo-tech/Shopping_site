@@ -5,38 +5,8 @@
 <head>
 <meta charset="BIG5">
 <title>Insert title here</title>
-<script type="text/javascript">
-	function check() {
-		if (loginForm.user.value == "") {
-			alert("帳號不可空白");
-			return;
-		}
-		if (loginForm.password.value == "") {
-			alert("密碼不可為空");
-			return;
-		}
-		if (loginForm.name.value == "") {
-			alert("姓名不可空白");
-			return;
-		}
-		if (loginForm.phone.value == "") {
-			alert("電話不可空白");
-			return;
-		}
-		if (loginForm.address.value == "") {
-			alert("地址不可空白");
-			return;
-		}
-		loginForm.submit();
-	}
-</script>
-<style>
-    body{
-         margin:0px;
-         padding:0px;
-         background:#fff url(pic/coffee3.jpg) center center fixed no-repeat;　//設定背景圖片的呈現方式
-         background-size: cover;　
-}        
+<script type="text/javascript"  language="javascript" src="js/javaScript01.js" charset="UTF-8" ></script>
+<link href="css/css01.css" rel="stylesheet" type="text/css"/>    
 </style>
 </head>
 <body>
