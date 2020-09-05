@@ -38,8 +38,7 @@ public class DeletePorderAction extends ActionSupport {
 		Member m = (Member) session.get("M");
 		
 		int x = df.getPd().checkIdUser(getId(),getUser()).size();
-		
-		
+				
 		if(x != 0 ) {
 			mf.getP().setId(getId());
 			mf.getP().setUser(getUser());
