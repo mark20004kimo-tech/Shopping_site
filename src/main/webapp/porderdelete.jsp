@@ -26,9 +26,9 @@ h1 {
 <tr>
 <td style="height:250px;width:600px;" align='center' valign="middle">
    <form action="deleteporder" method="POST">
-                        刪除訂單Id:<br>
+                        刪除訂單Id:
             <input type="number" name="id"><br><br>
-                        刪除訂單User:<br>
+                        刪除訂單User:
             <input type="text" name="user"><br><br>
             <input type="submit" value="提交" style="width:100px;height:30px;"/>
         </form>

@@ -40,7 +40,7 @@ public class DeletePorderAction extends ActionSupport {
 		int x = df.getPd().checkIdUser(getId(),getUser()).size();
 		
 		
-		if(x != 0 /*&& m.getUser().equals(df.getPd().checkIdUser(id, user))*/) {
+		if(x != 0 ) {
 			mf.getP().setId(getId());
 			mf.getP().setUser(getUser());
 			df.getPd().delete(mf.getP());
