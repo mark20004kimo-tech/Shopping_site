@@ -4,7 +4,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="fn"%> <!--常用函式標籤庫-->
 <%@ page isELIgnored="false"%> <!--支援EL表示式，不設的話，EL表示式不會解析-->
 <%@ page language="java" contentType="text/html; charset=BIG5"
-    pageEncoding="BIG5"%>
+    pageEncoding="BIG5"
+    import="model.Porder"
+    import="java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +27,7 @@
 </style>
 </head>
 <body>
-
+    <%List<Porder> p = (List<Porder>)session.getAttribute("l");%>
     <h1 align="center">訂單列表</h1>
     <span style="font-weight:bold ;border: 5px outset pink; background-color:pink ;
 		  font-size: 30px; color:black ; cursor: pointer">

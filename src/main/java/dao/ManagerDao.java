@@ -12,7 +12,7 @@ import model.Manager;
 public class ManagerDao implements ImplDao{
 	// 帳號密碼檢查
 		public static List<Manager> checkUser(String user, String password) {
-			Session se = ImplDao.getse();
+			Session se = ImplDao.getSe();
 			SQLQuery q=se.createSQLQuery("select * from manager where user='" + user + "' and password='" + password + "'");
 			q.addEntity(Manager.class);
 			List<Manager> l = q.list();
@@ -21,7 +21,7 @@ public class ManagerDao implements ImplDao{
 
 		// 帳號重複檢查
 		public static List<Manager> checkUserDu(String user) {
-			Session se = ImplDao.getse();
+			Session se = ImplDao.getSe();
 			SQLQuery q=se.createSQLQuery("select * from manager where user='" + user + "'");
 			q.addEntity(Manager.class);
 			List<Manager> l = q.list();
@@ -30,7 +30,7 @@ public class ManagerDao implements ImplDao{
 		
 		//查詢Id
 		public static List<Manager> checkId(Integer id) {
-			Session se = ImplDao.getse();
+			Session se = ImplDao.getSe();
 			SQLQuery q=se.createSQLQuery("select * from manager where id='" + id + "'");
 			q.addEntity(Manager.class);
 			List<Manager> l = q.list();
@@ -39,7 +39,7 @@ public class ManagerDao implements ImplDao{
 		
 		//查詢所有管理員資料
 		public static List<Manager> findallmanager() {
-			Session se = ImplDao.getse();
+			Session se = ImplDao.getSe();
 			SQLQuery q=se.createSQLQuery("select * from manager");
 			q.addEntity(Manager.class);
 			List<Manager> l = q.list();
@@ -48,7 +48,7 @@ public class ManagerDao implements ImplDao{
 
 	@Override
 	public void add(Object o) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		Transaction tx = se.beginTransaction();
 		se.save(o);
 		tx.commit();
@@ -58,14 +58,14 @@ public class ManagerDao implements ImplDao{
 
 	@Override
 	public Object get(int id) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		Manager mr = se.get(Manager.class, id);
 		return mr;
 	}
 
 	@Override
 	public void update(int id, Object o) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		Transaction tx = se.beginTransaction();
 		Manager mr = (Manager) o;
 		Manager mr1 = se.get(Manager.class, id);
@@ -81,7 +81,7 @@ public class ManagerDao implements ImplDao{
 	}
 	
 	public void update(Object o) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		Transaction tx = se.beginTransaction();
 		se.update(o);
 		tx.commit();
@@ -90,7 +90,7 @@ public class ManagerDao implements ImplDao{
 
 	@Override
 	public void delete(Object o) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		Transaction tx = se.beginTransaction();
 		se.delete(o);
 		tx.commit();

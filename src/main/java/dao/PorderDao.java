@@ -9,24 +9,33 @@ import model.Porder;
 public class PorderDao implements ImplDao {
 	
 	public static List<Porder> checkUser(String user) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		SQLQuery q=se.createSQLQuery("select * from porder where user='" + user + "'");
 		q.addEntity(Porder.class);
 		List<Porder> l = q.list();
 		return l;
 	}
-	
+	//管理員刪除訂單
 	public static List<Porder> checkId(Integer id) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		SQLQuery q=se.createSQLQuery("select * from porder where id='" + id + "'");
 		q.addEntity(Porder.class);
 		List<Porder> l = q.list();
 		return l;
 	}
 	
+	//會員員刪除訂單
+		public static List<Porder> checkIdUser(Integer id,String user) {
+			Session se = ImplDao.getSe();
+			SQLQuery q=se.createSQLQuery("select * from porder where id='" + id + "'and user='" + user + "'");
+			q.addEntity(Porder.class);
+			List<Porder> l = q.list();
+			return l;
+		}
+	
 	//查詢所有訂單資料	
 	public static List<Porder> findallporder() {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		SQLQuery q=se.createSQLQuery("select * from porder ");
 		q.addEntity(Porder.class);
 		List<Porder> l = q.list();
@@ -35,7 +44,7 @@ public class PorderDao implements ImplDao {
 
 	@Override
 	public void add(Object o) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		Transaction tx = se.beginTransaction();
 		se.save(o);
 		tx.commit();
@@ -44,14 +53,14 @@ public class PorderDao implements ImplDao {
 
 	@Override
 	public Object get(int id) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		Porder p = se.get(Porder.class, id);
 		return p;
 	}
 
 	@Override
 	public void update(int id, Object o) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		Transaction tx = se.beginTransaction();
 		Porder p = (Porder) o;
 		Porder p1 = se.get(Porder.class, id);
@@ -68,7 +77,7 @@ public class PorderDao implements ImplDao {
 	}
 	
 	public void update(Object o) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		Transaction tx = se.beginTransaction();
 		se.update(o);
 		tx.commit();
@@ -77,7 +86,7 @@ public class PorderDao implements ImplDao {
 
 	@Override
 	public void delete(Object o) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		Transaction tx = se.beginTransaction();
 		se.delete(o);
 		tx.commit();

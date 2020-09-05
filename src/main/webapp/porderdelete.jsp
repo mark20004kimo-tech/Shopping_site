@@ -28,6 +28,8 @@ h1 {
    <form action="deleteporder" method="POST">
                         刪除訂單Id:<br>
             <input type="number" name="id"><br><br>
+                        刪除訂單User:<br>
+            <input type="text" name="user"><br><br>
             <input type="submit" value="提交" style="width:100px;height:30px;"/>
         </form>
         </td>

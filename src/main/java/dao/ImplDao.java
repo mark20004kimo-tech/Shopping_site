@@ -11,7 +11,7 @@ import fact.ModelFactAnno;
 
 public interface ImplDao {
 	// 連線方法
-	static Session getse() {
+	static Session getSe() {
 		Configuration conn = new Configuration().configure();
 		SessionFactory sf = conn.buildSessionFactory();
 		Session se = sf.openSession();

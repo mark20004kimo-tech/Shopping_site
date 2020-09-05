@@ -10,7 +10,7 @@ public class MemberDao implements ImplDao {
 
 	// 帳號密碼檢查
 	public static List<Member> checkUser(String user, String password) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		SQLQuery q=se.createSQLQuery("select * from member where user='" + user + "' and password='" + password + "'");
 		q.addEntity(Member.class);
 		List<Member> l = q.list();
@@ -19,7 +19,7 @@ public class MemberDao implements ImplDao {
 
 	// 帳號重複檢查
 	public static List<Member> checkUserDu(String user) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		SQLQuery q=se.createSQLQuery("select * from member where user='" + user + "'");
 		q.addEntity(Member.class);
 		List<Member> l = q.list();
@@ -28,7 +28,7 @@ public class MemberDao implements ImplDao {
 
 	// 查詢所有會員資料
 	public static List<Member> findallmember() {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		SQLQuery q=se.createSQLQuery("select * from member");
 		q.addEntity(Member.class);
 		List<Member> l = q.list();
@@ -37,7 +37,7 @@ public class MemberDao implements ImplDao {
 	
 	// 查詢會員資料
 	public static List<Member> findmember(Integer id) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		SQLQuery q=se.createSQLQuery("select * from member where id='" + id + "'");
 		q.addEntity(Member.class);
 		List<Member> l = q.list();
@@ -46,7 +46,7 @@ public class MemberDao implements ImplDao {
 	
 	//查詢Id
 	public static List<Member> checkId(Integer id) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		SQLQuery q=se.createSQLQuery("select * from member where id='" + id + "'");
 		q.addEntity(Member.class);
 		List<Member> l = q.list();
@@ -55,7 +55,7 @@ public class MemberDao implements ImplDao {
 
 	@Override
 	public void add(Object o) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		Transaction tx = se.beginTransaction();
 		se.save(o);
 		tx.commit();
@@ -64,14 +64,14 @@ public class MemberDao implements ImplDao {
 
 	@Override
 	public Object get(int id) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		Member m = se.get(Member.class, id);
 		return m;
 	}
 
 	@Override
 	public void update(int id, Object o) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		Transaction tx = se.beginTransaction();
 		Member m = (Member) o;
 		Member m1 = se.get(Member.class, id);
@@ -86,7 +86,7 @@ public class MemberDao implements ImplDao {
 	}
 
 	public void update(Object o) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		Transaction tx = se.beginTransaction();
 		se.update(o);
 		tx.commit();
@@ -95,7 +95,7 @@ public class MemberDao implements ImplDao {
 
 	@Override
 	public void delete(Object o) {
-		Session se = ImplDao.getse();
+		Session se = ImplDao.getSe();
 		Transaction tx = se.beginTransaction();
 		se.delete(o);
 		tx.commit();
